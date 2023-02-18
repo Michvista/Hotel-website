@@ -1,0 +1,122 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.screen{
+  background:#333;
+  width:80%;
+  height:50vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.ground{
+  background: brown;
+  width:600%;
+  padding:30px;
+  position:absolute;
+  bottom:0;
+}
+.character,
+.characterone,
+.charactertwo{
+  position: relative;
+  right: 10%;
+  top:70%;
+}
+.character{
+  animation: move 1s ease-in-out infinite;
+}
+.characterone{
+  right:30%;
+  animation: move 1.5s ease-in-out infinite;
+}
+.charactertwo{
+  right:60%;
+  animation: move 2s ease-in-out infinite;
+}
+.characterone .head,
+.characterone .body{
+  background:blue;
+}
+.charactertwo .head,
+.charactertwo .body {
+  background: red;
+}
+ .head{
+  width:30px;
+  height:30px;
+  position: absolute;
+  background: greenyellow;
+  border-radius: 50%;
+  bottom: 60%;
+  right:5%;
+}
+ .body{
+  width:45px;
+  height:80px;
+  background: greenyellow;
+  position: absolute;
+  right:2%;
+  bottom:-40%;
+}
+@keyframes move{
+  0%{
+   right:-30%; 
+  }
+  100%{
+    right:100%;
+  }
+}
+ .body.dead{
+  background: gray;
+  border:1px solid red;
+  pointer-events: none;
+}
+.deadman{
+  position: absolute;
+  animation: dead .1s infinite ease;
+  pointer-events: none;
+}
+.characterone.deadman{
+    animation: dead1 .1s infinite ease;
+}
+.charactertwo.deadman{
+   animation: dead2 .1s infinite ease;
+}
+@keyframes dead{
+  0%{
+    right: 10%;
+  }
+  100%{
+    right:10%;
+  }
+}
+@keyframes dead1{
+  0%{
+    right: 40%;
+  }
+  100%{
+    right:40%;
+  }
+}
+
+@keyframes dead2{
+  0%{
+    right: 70%;
+  }
+  100%{
+    right:70%;
+  }
+}
+
+
+
+
